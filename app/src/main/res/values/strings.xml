@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Bookmarker</string>
+
+    <!--Toolbar-->
+    <string name="toolbar">Bookmarker</string>
+
+    <!--Menu Item-->
+    <string name="add_bookmark">Add Bookmark</string>
+    <string name="clear_all">Clear All</string>
+    <string name="about">About</string>
+    <string name="enable_splash">Enable Splash Screen</string>
+
+    <!--No Data Elements-->
+    <string name="no_data">No Data Image</string>
+    <string name="no_data_opps">Opps!</string>
+    <string name="no_data_added">No Bookmarks added.</string>
+
+    <!--Add Bookmark-->
+    <string name="back_img">Back Image</string>
+    <string name="all_field_required">All Fields Required</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_url">URL</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_date">Select Date</string>
+    <string name="add_btn">Add</string>
+
+    <!--Bookmark Item-->
+    <string name="icon_text">A</string>
+    <string name="bookmark_title">Bookmark Title</string>
+    <string name="bookmark_url">https://example.com</string>
+    <string name="bookmark_description">This is description</string>
+    <string name="bookmark_category">Category: News</string>
+    <string name="bookmark_date">15/04/2025</string>
+    <string name="edit_image">Edit</string>
+    <string name="delete_image">Delete</string>
+
+    <!--Splash-->
+    <string name="bookmark_logo">Bookmark Logo</string>
+
+    <!--About-->
+    <string name="about_version"><b>Version:</b> 1.0.0</string>
+    <string name="developed_by">
+            <b>Developed by:\n</b>0207816 Tan Zhao Yong\n
+            0208385 Kuberan Suppiah
+    </string>
+
+
+</resources>

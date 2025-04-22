@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddBookmark">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/white"
+        android:backgroundTint="#FFFFFF"
+        android:clipToPadding="false"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/back_img"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/andada_pro"
+            android:gravity="center"
+
+            android:text="@string/all_field_required"
+            android:textColor="#333333"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/etTitle"
+            style="@style/StyledEditText"
+            android:hint="@string/hint_title"
+            android:inputType="text|textAutoCorrect"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etUrl"
+            style="@style/StyledEditText"
+            android:hint="@string/hint_url"
+            android:inputType="text"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etDes"
+            style="@style/StyledEditText"
+
+            android:hint="@string/hint_description"
+            android:inputType="text"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/et_bg">
+
+            <Spinner
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etDate"
+            style="@style/StyledEditText"
+            android:focusable="false"
+            android:hint="@string/hint_date"
+            android:inputType="none"
+            android:textSize="18sp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/primaryColor"
+            android:text="@string/add_btn"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
