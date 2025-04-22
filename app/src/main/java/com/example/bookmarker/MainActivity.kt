@@ -8,10 +8,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.ListView
+import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.appbar.MaterialToolbar
@@ -24,9 +28,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var context: Context
     lateinit var prefManager: PrefManager
     private var bookmarksList: MutableList<Bookmark> = mutableListOf()
+    private lateinit var spinnerFilter: Spinner
+    private lateinit var itemList: Array<String>
+    private var selectedCategory: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainLayout)) { v, insets ->
@@ -45,20 +53,50 @@ class MainActivity : AppCompatActivity() {
         //adapter
         setupBookmarkAdapter()
 
+        //Category filter
+        setupSpinnerFilter()
+
     }//onCreate
+
+    private fun setupSpinnerFilter(){
+
+        itemList = resources.getStringArray(R.array.category_options)
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemList)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerFilter.adapter = adapter
+
+        spinnerFilter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                selectedCategory = if (position == 0) "" else itemList[position]
+                filterBookmarksByCategory()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+
+    }
+
+    private fun filterBookmarksByCategory() {
+        val allBookmarks = prefManager.getBookmarks()
+        bookmarksList.clear()
+
+        if (selectedCategory.isEmpty()) {
+            bookmarksList.addAll(allBookmarks)
+        } else {
+            bookmarksList.addAll(allBookmarks.filter { it.category == selectedCategory })
+        }
+
+        llNoData.visibility = if (bookmarksList.isEmpty()) View.VISIBLE else View.GONE
+        listView.visibility = if (bookmarksList.isEmpty()) View.GONE else View.VISIBLE
+
+        adapter.notifyDataSetChanged()
+    }
 
     override fun onResume() {
         super.onResume()
         bookmarksList.clear()
-        bookmarksList.addAll(prefManager.getBookmarks())
-        if (bookmarksList.isEmpty()) {
-            llNoData.visibility = View.VISIBLE
-            listView.visibility = View.GONE
-        } else {
-            llNoData.visibility = View.GONE
-            listView.visibility = View.VISIBLE
-        }
-        adapter.notifyDataSetChanged()
+        filterBookmarksByCategory()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -161,6 +199,7 @@ class MainActivity : AppCompatActivity() {
         context = this@MainActivity
         listView = findViewById(R.id.listViewBookmarks)
         llNoData = findViewById(R.id.llNoData)
+        spinnerFilter = findViewById(R.id.spinnerFilter)
         prefManager = PrefManager(context)
     }
 }//main
