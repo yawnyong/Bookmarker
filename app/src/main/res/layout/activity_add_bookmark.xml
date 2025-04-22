@@ -75,6 +75,7 @@
                 android:id="@+id/categorySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:entries="@array/category_options"
                 android:padding="12dp" />
 
         </LinearLayout>

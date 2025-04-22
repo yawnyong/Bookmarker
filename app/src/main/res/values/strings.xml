@@ -24,6 +24,14 @@
     <string name="hint_date">Select Date</string>
     <string name="add_btn">Add</string>
 
+    <string-array name="category_options">
+        <item>Select Category</item>
+        <item>Social Media</item>
+        <item>Entertainment</item>
+        <item>Games</item>
+        <item>Programming</item>
+    </string-array>
+
     <!--Bookmark Item-->
     <string name="icon_text">A</string>
     <string name="bookmark_title">Bookmark Title</string>

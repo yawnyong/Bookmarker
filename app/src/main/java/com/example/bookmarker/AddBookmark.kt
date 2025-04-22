@@ -35,13 +35,7 @@ class AddBookmark : AppCompatActivity() {
     private var selectedCategory = ""
     private var isEdit = false
     private var id = ""
-    private val itemList = listOf(
-        "Select Category",
-        "Social Media",
-        "Entertainment",
-        "Games",
-        "Programming",
-    )
+    private lateinit var itemList: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +50,6 @@ class AddBookmark : AppCompatActivity() {
         //call the GUI
         setupGUI()
 
-        //adapter
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemList)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
 
         //spinner
         setupSpinner()
@@ -144,6 +134,13 @@ class AddBookmark : AppCompatActivity() {
     }
 
     private fun setupSpinner(){
+        itemList = resources.getStringArray(R.array.category_options)
+
+        //adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemList)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
