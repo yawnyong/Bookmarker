@@ -50,7 +50,6 @@ class AddBookmark : AppCompatActivity() {
         //call the GUI
         setupGUI()
 
-
         //spinner
         setupSpinner()
         //date picker
@@ -130,9 +129,12 @@ class AddBookmark : AppCompatActivity() {
                 etDate.setText(formattedDate)
             }, year, month, day)
 
+        //To prevent choosing the past dates
+        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
         datePickerDialog.show()
     }
 
+    //set up the spinner
     private fun setupSpinner(){
         itemList = resources.getStringArray(R.array.category_options)
 
@@ -161,10 +163,12 @@ class AddBookmark : AppCompatActivity() {
         }
     }
 
+    //URL validation
     private fun isValidUrl(url: String): Boolean {
         return Patterns.WEB_URL.matcher(url).matches()
     }
 
+    //reset the fields
     private fun resetFields() {
         etTitle.setText("")
         etDescription.setText("")
@@ -174,6 +178,7 @@ class AddBookmark : AppCompatActivity() {
         spinner.setSelection(0)
     }
 
+    //Alert for Add or Edit the Bookmark
     private fun showAlert(context: Context, message: String, bookmark :Bookmark) {
         val builder = AlertDialog.Builder(context)
         builder.setMessage(message)

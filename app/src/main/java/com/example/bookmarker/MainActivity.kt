@@ -102,6 +102,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.menu, menu)
+
+        //splash screen
         val splashItem = menu?.findItem(R.id.menu_enable_splash)
         splashItem?.isChecked = prefManager.isSplashEnabled()
 
@@ -110,11 +112,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+
+            //Add Bookmark
             R.id.menu_add_bookmark -> {
                 startActivity(Intent(context, AddBookmark::class.java))
                 return true
             }
 
+            //Clear All
             R.id.menu_clear_all -> {
                 bookmarksList.clear()
                 llNoData.visibility = View.VISIBLE
@@ -124,12 +129,14 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
 
+            //About
             R.id.menu_about -> {
                 val dialog = AboutDialogFragment()
                 dialog.show(supportFragmentManager, "AboutDialog")
                 return true
             }
 
+            //Enable Splash
             R.id.menu_enable_splash -> {
                 val newState = !item.isChecked
                 item.isChecked = newState

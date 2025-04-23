@@ -37,7 +37,7 @@
     <string name="bookmark_title">Bookmark Title</string>
     <string name="bookmark_url">https://example.com</string>
     <string name="bookmark_description">This is description</string>
-    <string name="bookmark_category">Category: News</string>
+    <string name="bookmark_category"><b>Category:</b> News</string>
     <string name="bookmark_date">15/04/2025</string>
     <string name="edit_image">Edit</string>
     <string name="delete_image">Delete</string>
