@@ -11,6 +11,8 @@
     android:padding="12dp">
 
     <!-- Icon Circle -->
+
+    <!-- Right block with info -->
     <TextView
         android:id="@+id/tvIcon"
         android:layout_width="48dp"
@@ -22,7 +24,6 @@
         android:textColor="@android:color/white"
         android:textSize="20sp" />
 
-    <!-- Right block with info -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

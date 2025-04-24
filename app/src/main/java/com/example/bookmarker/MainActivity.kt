@@ -159,6 +159,7 @@ class MainActivity : AppCompatActivity() {
                 deleteBookMark(context,bookmark)
             }
 
+            //Click the bookmark to open the URL in the internal browser
             override fun onClick(item: Bookmark) {
 
                 var url = item.url
