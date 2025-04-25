@@ -48,7 +48,7 @@ class BookmarkDetailDialogFragment(private val bookmark: Bookmark) : DialogFragm
             .setView(view)
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
             .create()
-    }
+    }//onCreate
 
 
     fun createDialogTitle(context: Context, titleText: String): View {
@@ -58,4 +58,4 @@ class BookmarkDetailDialogFragment(private val bookmark: Bookmark) : DialogFragm
         return customTitle
     }
 
-}
+}//main

@@ -29,6 +29,6 @@ class AboutDialogFragment : DialogFragment() {
             }
 
         return builder.create()
-    }
+    }//onCreate
 
-}
+}//main

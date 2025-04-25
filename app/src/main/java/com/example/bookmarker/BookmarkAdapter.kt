@@ -68,6 +68,7 @@ class BookmarkAdapter(
         return view
     }
 
+    //set the bookmark list icon based on the first character of the bookmark title
     private fun setRandomBackgroundWithInitial(textView: TextView, input: String) {
         val firstChar = input.trim().firstOrNull()?.uppercaseChar() ?: '?'
         textView.text = firstChar.toString()
@@ -83,6 +84,7 @@ class BookmarkAdapter(
         textView.setTextColor(Color.BLACK)
     }
 
+    //random color for the bookmark list icon
     private fun getRandomPastelColor(): Int {
         val random = Random()
         val baseColor = 150  // Avoid too light or too dark colors

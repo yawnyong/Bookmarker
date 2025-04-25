@@ -149,6 +149,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    //Setup bookmark adapter
     private fun setupBookmarkAdapter(){
         adapter = BookmarkAdapter(this, bookmarksList, object : BookmarkAdapter.onClickListerner {
             override fun onEdit(bookmark: Bookmark) {
@@ -176,6 +177,7 @@ class MainActivity : AppCompatActivity() {
         listView.adapter = adapter
     }
 
+    //Delete bookmark
     private fun deleteBookMark(context: Context, bookmark: Bookmark) {
         val builder = AlertDialog.Builder(context)
         builder.setMessage("Are you sure want to Delete?")

@@ -93,4 +93,4 @@ class PrefManager(context: Context) {
         private val KEY_BOOKMARKS = "bookmarks_list"
         private val KEY_SPLASH = "splash_enabled"
     }
-}
+}//main
