@@ -21,7 +21,7 @@ class BookmarkDetailDialogFragment(private val bookmark: Bookmark) : DialogFragm
         val tvUrl = view.findViewById<TextView>(R.id.tvUrl)
         tvUrl.text = bookmark.url
 
-        // Handle click to open internal browser
+        // To open the URL in the internal browser by clicking the url(?)
         tvUrl.setOnClickListener {
             var url = bookmark.url
             if (!url.startsWith("http://") && !url.startsWith("https://")) {

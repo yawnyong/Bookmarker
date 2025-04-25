@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
                 deleteBookMark(context,bookmark)
             }
 
-            //Click the bookmark to open the URL in the internal browser
+            //Bookmark details dialog
             override fun onClick(item: Bookmark) {
 
                 val dialog = BookmarkDetailDialogFragment(item)
