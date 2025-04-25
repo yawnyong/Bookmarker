@@ -130,8 +130,9 @@ class AddBookmark : AppCompatActivity() {
                 etDate.setText(formattedDate)
             }, year, month, day)
 
-        //To prevent choosing the past dates
-        datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
+        //To prevent choosing the past dates (I think it's not necessary to prevent the past date,
+        //as it used to record the url
+        //datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
         datePickerDialog.show()
     }
 
