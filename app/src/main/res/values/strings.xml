@@ -52,5 +52,12 @@
             0208385 Kuberan Suppiah
     </string>
 
+    <!--Display the Bookmark Details-->
+    <string name="display_title">Bookmark Title</string>
+    <string name="display_url">https://example.com</string>
+    <string name="display_description">This is a description.</string>
+    <string name="display_category">Category: Technology</string>
+    <string name="display_date">Date: 2025-04-25</string>
+
 
 </resources>

@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     }//onCreate
 
+    //Display the bookmark for the selected category
     private fun setupSpinnerFilter(){
 
         itemList = resources.getStringArray(R.array.category_options)
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Filter the bookmark by category
     private fun filterBookmarksByCategory() {
         val allBookmarks = prefManager.getBookmarks()
         bookmarksList.clear()
@@ -162,12 +164,8 @@ class MainActivity : AppCompatActivity() {
             //Click the bookmark to open the URL in the internal browser
             override fun onClick(item: Bookmark) {
 
-                var url = item.url
-                if (!url.startsWith("http://") && !url.startsWith("https://")) {
-                    url = "http://$url"  // Add http:// if no scheme is present
-                }
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                startActivity(intent)
+                val dialog = BookmarkDetailDialogFragment(item)
+                dialog.show(supportFragmentManager, "BookmarkDetail")
             }
 
             override fun onLongPress(bookmark: Bookmark) {
@@ -203,6 +201,8 @@ class MainActivity : AppCompatActivity() {
         alert.show()
     }
 
+
+    //setup GUI
     private fun setupGUI(){
         context = this@MainActivity
         listView = findViewById(R.id.listViewBookmarks)

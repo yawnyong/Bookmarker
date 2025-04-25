@@ -85,6 +85,7 @@ class AddBookmark : AppCompatActivity() {
         }
     }
 
+    //Add or Edit
     private fun addOrEdit(){
         val tittle = etTitle.text.toString()
         val des = etDescription.text.toString()
