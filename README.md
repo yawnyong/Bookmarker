@@ -41,7 +41,7 @@ The app workflow involves the following steps:
    - Users can access the About dialog, which displays information about the app, such as its version and credits.
   
 7. **Filter Option**:
-   - Users can filter the bookmarks based on the category (Social Media, Entertaiment, Games and Programming).  
+   - Users can filter the bookmarks based on the category (Social Media, Entertainment, Games and Programming).  
    
 ---
 
