@@ -290,4 +290,4 @@ Bookmarker/
 Feel free to fork this repository, contribute improvements, or report issues via GitHub issues.
 
 ## License
-This project is open source under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is for academic purposes only, an Assignment 2 for DMT22113N MOBILE TECHNOLOGY Feb 2025.
